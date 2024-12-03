@@ -23,12 +23,13 @@ body {
                'Helvetica Neue', /* macOS */
                Arial,
                sans-serif;
-  padding: 10px;  
+  padding: max(10px, 2vw);  /* Uses at least 10px, scales up on larger screens */
   -webkit-font-smoothing: antialiased;  /* Better rendering on Apple devices */
   -moz-osx-font-smoothing: grayscale;
 }
 
 body::before {
+  will-change: opacity, background-position;
   content: '';
   position: fixed;
   top: 0;
@@ -67,6 +68,8 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  max-width: calc(100% - 20px);
 }
 /* Main text styling */
 .main-text {

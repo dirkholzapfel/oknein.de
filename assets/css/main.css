@@ -1,0 +1,25 @@
+/* Reset default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic body styling */
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main text styling */
+.main-text {
+  font-size: 8vw;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.1em;
+}

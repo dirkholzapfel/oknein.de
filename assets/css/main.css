@@ -24,6 +24,8 @@ body {
                Arial,
                sans-serif;
   padding: 10px;  
+  -webkit-font-smoothing: antialiased;  /* Better rendering on Apple devices */
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body::before {
@@ -81,5 +83,11 @@ body::before {
   font-size: calc(8vw * 0.35);
   text-align: center;
   margin-top: 1rem;  /* Add some spacing between main text and subtext */
-  font-family: 'Courier New', Courier, monospace;
+  font-family: ui-monospace,  /* Modern browsers */
+               SFMono-Regular,  /* Apple systems */
+               Menlo,  /* macOS/iOS */
+               Monaco,  /* macOS/iOS */
+               'Courier New',  /* Windows/iOS */
+               Courier,
+               monospace;  /* Generic fallback */
 }

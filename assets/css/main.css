@@ -26,6 +26,7 @@ body {
   padding: max(10px, 2vw);  /* Uses at least 10px, scales up on larger screens */
   -webkit-font-smoothing: antialiased;  /* Better rendering on Apple devices */
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
 body::before {

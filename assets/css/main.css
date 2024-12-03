@@ -14,12 +14,70 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative; /* Add this for absolute positioning of background */
+  font-family: system-ui, /* Modern browsers' native font */
+               -apple-system, /* iOS Safari, macOS Safari */
+               BlinkMacSystemFont, /* Chrome on macOS */
+               'Segoe UI', /* Windows */
+               Roboto, /* Android, Chrome OS */
+               'Helvetica Neue', /* macOS */
+               Arial,
+               sans-serif;
+  
 }
 
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+  z-index: -1;
+  animation: 
+    fadeIn 5s ease-in forwards 2s,  /* Initial fade with 5s delay, then stay */
+    subtlePulse 60s ease-in-out infinite 7s,  /* Start pulsing after fade-in */
+    slideBackground 60s ease-in-out infinite 5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 0.15; }
+}
+
+@keyframes subtlePulse {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.2; }
+}
+
+@keyframes slideBackground {
+  0%, 100% { background-position: center center; }
+  25% { background-position: 100% center; }
+  75% { background-position: 0% center; }
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 /* Main text styling */
 .main-text {
+  display: block;  /* Forces the div to take full width */
   font-size: 8vw;
   font-weight: bold;
   text-align: center;
   letter-spacing: 0.1em;
+}
+
+/* Subtext styling */
+.sub-text {
+  display: block;  /* Forces the div to take full width */
+  font-size: calc(8vw * 0.5);  /* 75% of main-text size */
+  text-align: center;
+  margin-top: 1rem;  /* Add some spacing between main text and subtext */
 }

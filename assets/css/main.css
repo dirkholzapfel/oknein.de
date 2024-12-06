@@ -10,19 +10,18 @@ body {
   background-color: black;
   color: white;
   min-height: 100vh;
-  min-height: 100dvh;
-  display: flex;
+  margin: 0;
+  position: relative;
+  display: block;
   justify-content: center;
   align-items: center;
-  position: relative; /* Add this for absolute positioning of background */
-  font-family: system-ui, /* Modern browsers' native font */
-               -apple-system, /* iOS Safari, macOS Safari */
-               BlinkMacSystemFont, /* Chrome on macOS */
-               'Segoe UI', /* Windows */
-               Roboto, /* Android, Chrome OS */
-               'Helvetica Neue', /* macOS */
-               Arial,
-               sans-serif;
+  font-family: ui-monospace,
+  SFMono-Regular,
+  Menlo,
+  Monaco,
+  'Courier New',
+  Courier,
+  monospace;
   padding: max(10px, 2vw);  /* Uses at least 10px, scales up on larger screens */
   -webkit-font-smoothing: antialiased;  /* Better rendering on Apple devices */
   -moz-osx-font-smoothing: grayscale;
@@ -37,7 +36,6 @@ body::before {
   left: 0;
   width: 100%;
   height: 100vh;
-  height: 100dvh;
   background-image: url('../images/bg.jpg');
   background-size: cover;
   background-position: center center;
@@ -65,33 +63,87 @@ body::before {
   75% { background-position: 0% center; }
 }
 
-.text-container {
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - max(10px, 2vw));
+  width: 100%;
+}
+
+.concerts-container {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   max-width: calc(100% - 20px);
-}
-/* Main text styling */
-.main-text {
-  display: block;  /* Forces the div to take full width */
-  font-size: 12vw;
-  font-weight: bold;
   text-align: center;
-  letter-spacing: 0.1em;
 }
 
-/* Subtext styling */
-.sub-text {
-  display: block;  /* Forces the div to take full width */
-  font-size: calc(8vw * 0.35);
+/* Logo styling (replacing main-text) */
+.logo {
+  width: 80%;  /* Adjust this value to control the logo size */
+  max-width: 600px;  /* Prevents the logo from becoming too large */
+  height: auto;
+  margin: 2rem 0;
+}
+
+/* Concert styling */
+.concert {
+  display: block;
+  font-size: 1vw;  /* Default size for large desktops */
   text-align: center;
-  margin-top: 1rem;  /* Add some spacing between main text and subtext */
-  font-family: ui-monospace,  /* Modern browsers */
-               SFMono-Regular,  /* Apple systems */
-               Menlo,  /* macOS/iOS */
-               Monaco,  /* macOS/iOS */
-               'Courier New',  /* Windows/iOS */
-               Courier,
-               monospace;  /* Generic fallback */
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 1440px) {
+  .concert {
+    font-size: 1.5vw;  /* Size for small desktops */
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .concert {
+    font-size: 2.5vw;  /* Medium size for tablets */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .concert {
+    font-size: 4vw;  /* Larger size for mobile devices */
+  }
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem 0;
+}
+
+.contact a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+.youtube-embed {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  height: auto;
+  aspect-ratio: 16/9;
+  margin-bottom: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .youtube-embed {
+    width: 100%;
+  }
 }

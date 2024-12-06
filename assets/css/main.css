@@ -85,10 +85,11 @@ body::before {
 
 /* Logo styling (replacing main-text) */
 .logo {
-  width: 80%;  /* Adjust this value to control the logo size */
-  max-width: 600px;  /* Prevents the logo from becoming too large */
+  width: 100%;
+  max-width: 600px;  /* adjust this value based on your needs */
   height: auto;
-  margin: 2rem 0;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Concert styling */

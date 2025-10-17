@@ -73,7 +73,7 @@ body::before {
 
 .concerts-container {
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -104,6 +104,10 @@ h2 {
   font-size: 2rem;
   text-align: center;
   margin-top: 2vw;
+}
+
+.previous-concerts {
+  margin-top: 3rem;
 }
 
 /* Previous concerts styling - smaller text */

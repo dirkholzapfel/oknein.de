@@ -95,28 +95,35 @@ body::before {
 /* Concert styling */
 .concert {
   display: block;
-  font-size: 1vw;  /* Default size for large desktops */
+  font-size: 1.5rem;  /* Default size for large desktops */
   text-align: center;
   margin-top: 1rem;
 }
 
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2vw;
+}
+
+/* Previous concerts styling - smaller text */
+.previous-concerts .concert {
+  font-size: 1.2rem;  /* Smaller than regular concerts */
+}
+
 @media screen and (max-width: 1440px) {
   .concert {
-    font-size: 1.5vw;  /* Size for small desktops */
+    font-size: 1.2rem;  /* Size for small desktops */
+  }
+  .previous-concerts .concert {
+    font-size: 1rem;  /* Smaller than regular concerts */
+  }
+  h2 {
+    font-size: 1.5rem;
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .concert {
-    font-size: 2.5vw;  /* Medium size for tablets */
-  }
-}
 
-@media screen and (max-width: 768px) {
-  .concert {
-    font-size: 4vw;  /* Larger size for mobile devices */
-  }
-}
 
 footer {
   width: 100%;
